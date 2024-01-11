@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  h1 {
+    color: orangered;
+    font-size: 52px;
+  }
+
+  p {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+  }
+}

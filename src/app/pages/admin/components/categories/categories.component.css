@@ -1,0 +1,10 @@
+.button-container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 10px 0;
+}
+
+/*# sourceMappingURL=categories.component.css.map */

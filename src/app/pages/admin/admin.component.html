@@ -1,0 +1,63 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <div class="logo">
+      <span>QuizBlast</span>
+    </div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item [routerLink]="'dashboard'">
+        <span nz-icon nzType="dashboard" nzTheme="outline"></span>
+        <span>Dashboard</span>
+      </li>
+      <li nz-menu-item [routerLink]="'questions'">
+        <span nz-icon nzType="question-circle" nzTheme="outline"></span>
+        <span>Questions</span>
+      </li>
+      <li nz-menu-item [routerLink]="'categories'">
+        <span nz-icon nzType="info-circle" nzTheme="outline"></span>
+        <span>Categories</span>
+      </li>
+      <li nz-menu-item [routerLink]="'users'">
+        <span nz-icon nzType="usergroup-add" nzTheme="outline"></span>
+        <span>Users</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header>
+          <span
+            class="trigger"
+            nz-icon
+            [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"
+          ></span>
+      <div class="rightContentContainer">
+        <button nz-button nz-dropdown nzType="link" [nzDropdownMenu]="userMenu">{{ user?.name }}</button>
+        <nz-dropdown-menu #userMenu="nzDropdownMenu">
+          <ul nz-menu nzSelectable>
+            <li nz-menu-item>
+              <span nz-icon nzType="user"></span>
+              Profile
+            </li>
+            <li nz-menu-item>
+              <span nz-icon nzType="setting" nzTheme="outline"></span>
+              Settings
+            </li>
+            <li nz-menu-item nzDanger (click)="logout()">
+              <span nz-icon nzType="logout" nzTheme="outline"></span>
+              Logout
+            </li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+    </nz-header>
+    <nz-content>
+      <nz-breadcrumb>
+        <nz-breadcrumb-item *ngFor="let bc of breadcrumb">{{bc | titlecase}}</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div class="inner-content">
+        <router-outlet></router-outlet>
+      </div>
+    </nz-content>
+    <nz-footer>QuizBlast Admin Module. Implement By Kacper Wyrozumialski</nz-footer>
+  </nz-layout>
+</nz-layout>

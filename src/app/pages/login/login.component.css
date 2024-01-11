@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container .title {
+  text-align: center;
+}
+.container .login-form-button {
+  width: 100%;
+}
+
+/*# sourceMappingURL=login.component.css.map */

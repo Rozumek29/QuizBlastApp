@@ -1,0 +1,26 @@
+<div class="container">
+  <form nz-form [nzLayout]="'horizontal'" [formGroup]="loginForm" (ngSubmit)="submit()">
+    <h1 class="title">Sign In</h1>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Email!">
+        <nz-input-group nzPrefixIcon="user">
+          <input formControlName="email" nz-input placeholder="Email" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your Password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input formControlName="password" nz-input type="password" placeholder="Password" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <p nz-paragraph nzType="danger" *ngIf="errorMessage">{{errorMessage}}</p>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button class="login-form-button" nzType="primary" [disabled]="!loginForm.valid">Log in</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>
+

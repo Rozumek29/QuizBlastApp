@@ -1,0 +1,28 @@
+<div class="button-container">
+  <button nz-button nzType="primary">Add</button>
+</div>
+<nz-table [nzData]="questions" [nzFrontPagination]="true" [nzLoading]="loading">
+  <thead>
+  <tr>
+    <th nzColumnKey="id" [nzSortFn]="true">Id</th>
+    <th nzColumnKey="quote" >Quote</th>
+    <th nzColumnKey="category" [nzSortFn]="true">Category</th>
+    <th nzColumnKey="difficulty" [nzSortFn]="true">Difficulty</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let question of questions">
+    <td>{{question.id}}</td>
+    <td>{{question.quote}}</td>
+    <td>{{question.category}}</td>
+    <td>{{question.difficulty}}</td>
+    <td>
+      <button nz-button nzType="primary">
+        <span nz-icon nzType="edit" nzTheme="outline"></span>
+        Edit
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
