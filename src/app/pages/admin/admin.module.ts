@@ -16,6 +16,13 @@ import {NzButtonModule} from "ng-zorro-antd/button";
 import {NzSpaceModule} from "ng-zorro-antd/space";
 import {NzDropDownModule} from "ng-zorro-antd/dropdown";
 import {AppModule} from "../../app.module";
+import {ProfileComponent} from "../components/profile/profile.component";
+import {NzDrawerModule} from "ng-zorro-antd/drawer";
+import {NzFormModule} from "ng-zorro-antd/form";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NzSelectModule} from "ng-zorro-antd/select";
+import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
+import {NzInputModule} from "ng-zorro-antd/input";
 
 
 
@@ -25,7 +32,8 @@ import {AppModule} from "../../app.module";
     DashboardComponent,
     QuestionsComponent,
     CategoriesComponent,
-    UsersComponent
+    UsersComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +46,13 @@ import {AppModule} from "../../app.module";
     NzButtonModule,
     NzSpaceModule,
     NzDropDownModule,
-    AppModule
+    NzDrawerModule,
+    NzFormModule,
+    FormsModule,
+    NzSelectModule,
+    NzDatePickerModule,
+    NzInputModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule],
 

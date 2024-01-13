@@ -31,10 +31,10 @@
             (click)="isCollapsed = !isCollapsed"
           ></span>
       <div class="rightContentContainer">
-        <button nz-button nz-dropdown nzType="link" [nzDropdownMenu]="userMenu">{{ user?.name }}</button>
-        <nz-dropdown-menu #userMenu="nzDropdownMenu">
+        <button nz-button nz-dropdown nzType="link" [nzDropdownMenu]="userMenu" *ngIf="userMenu" >{{user?.FirstName}} {{user?.LastName}}</button>
+        <nz-dropdown-menu #userMenu="nzDropdownMenu" >
           <ul nz-menu nzSelectable>
-            <li nz-menu-item>
+            <li nz-menu-item (click)="profileVisible = !profileVisible">
               <span nz-icon nzType="user"></span>
               Profile
             </li>
@@ -61,3 +61,5 @@
     <nz-footer>QuizBlast Admin Module. Implement By Kacper Wyrozumialski</nz-footer>
   </nz-layout>
 </nz-layout>
+
+<app-profile [(isVisible)]="profileVisible" [user]="user!!"></app-profile>

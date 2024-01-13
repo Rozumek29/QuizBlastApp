@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {constants} from "../config/constants";
 import {IUser} from "../models/auth.model";
@@ -37,19 +37,16 @@ export class TokenService {
     return localStorage.removeItem(constants.CURRENT_TOKEN);
   }
 
-  getUser(): IUser | null{
+  getUser(): IUser{
     const token = localStorage.getItem(constants.CURRENT_TOKEN);
     if (token != null) {
       const decoded = JSON.parse(atob(token.split('.')[1]));
-      const user: IUser = {
+      return {
         id: Number.parseInt(decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']),
-        name: decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
         role: decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'],
         expiration: decoded.exp
-      }
-
-      return user;
+      };
     }
-    return null;
+    throw new Error("Token not found")
   }
 }

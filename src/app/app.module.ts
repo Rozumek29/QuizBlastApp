@@ -21,6 +21,7 @@ import {NzTypographyModule} from "ng-zorro-antd/typography";
 import {HeadersInterceptor} from "./config/HeadersInterceptor";
 import { PageNotFoundComponent } from './errors/page-not-found/page-not-found.component';
 import {NzDrawerModule} from "ng-zorro-antd/drawer";
+import { ProfileComponent } from './pages/components/profile/profile.component';
 
 registerLocaleData(en);
 

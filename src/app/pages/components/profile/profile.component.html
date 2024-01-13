@@ -1,0 +1,15 @@
+<nz-drawer
+[nzClosable]="true"
+[nzVisible]="isVisible"
+nzPlacement="right"
+nzTitle="{{title}}"
+(nzOnClose)="close()">
+  <form nz-form *nzDrawerContent>
+    <nz-form-item [formGroup]="profileForm">
+      <nz-form-label [nzSpan]="5">Email</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="email" [disabled]="true"/>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-drawer>
